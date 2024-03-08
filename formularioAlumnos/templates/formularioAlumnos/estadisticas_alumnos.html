@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Estadísticas de Edad de Alumnos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body style="background-color: #000;">
+    <div class="container mt-4">
+        <h2 class="text-light">Estadísticas de Edad</h2>
+        <table class="table table-dark">
+            <thead>
+                <tr>
+                    <th class="bg-info text-dark">Edad</th>
+                    <th class="bg-info text-dark">Cantidad de Alumnos</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for edad, cantidad in estadisticas.items %}
+                <tr>
+                    <td>{{ edad }}</td>
+                    <td>{{ cantidad }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'alumno_list' %}" class="btn btn-secondary">Volver a la Lista de Alumnos</a>
+    </div>
+</body>
+</html>

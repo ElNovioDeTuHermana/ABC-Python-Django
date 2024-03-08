@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Alumno</title>
+    <!-- Incluir Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .form-group label {
+            font-weight: bold;
+        }
+        .form-control {
+            background-color: #FFD700;
+            color: #000;
+        }
+        .btn {
+            background-color: #000;
+            border-color: #FFD700;
+            color: #FFD700;
+        }
+        .btn:hover {
+            background-color: #FFD700;
+            border-color: #000;
+            color: #000;
+        }
+        .btn-secondary {
+            background-color: #000;
+            border-color: #fff;
+            color: #fff;
+        }
+        .btn-secondary:hover {
+            background-color: #fff;
+            border-color: #000;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h2 class="text-center">Formulario de Alumno</h2>
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="id_carnet">Carnet:</label>
+                        <br>
+                        {{ form.carnet }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_nombres">Nombres:</label>
+                        <br>
+                        {{ form.nombres }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_apellidos">Apellidos:</label>
+                        <br>
+                        {{ form.apellidos }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_correoElectronico">Correo Electrónico:</label>
+                        <br>
+                        {{ form.correoElectronico }}
+                    </div>
+                    <div class="form-group">
+                        <label for="id_fechaNacimiento">Fecha de Nacimiento:</label>
+                        <br>
+                        {{ form.fechaNacimiento }}
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Guardar</button>
+                </form>
+                <a href="{% url 'alumno_list' %}" class="btn btn-secondary btn-block mt-3">Volver a la lista</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap (opcional) -->
+    <!-- JavaScript y dependencias de jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <!-- JavaScript y dependencias de Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
